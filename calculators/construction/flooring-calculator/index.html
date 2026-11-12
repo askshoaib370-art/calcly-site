@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flooring Calculator - Free Online Construction &amp; Home Tool | Calcly</title>
+<meta name="description" content="Calculate how much flooring material and how many boxes you need, including a waste allowance for cuts.">
+<link rel="canonical" href="https://calcly.tools/calculators/construction/flooring-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why add 10% extra?", "acceptedAnswer": {"@type": "Answer", "text": "To cover cuts, mistakes, and future repairs made with material from the same batch and dye lot."}}, {"@type": "Question", "name": "Does this work for tile, laminate, and hardwood?", "acceptedAnswer": {"@type": "Answer", "text": "Yes &mdash; just enter the coverage per box or carton listed on your specific product's packaging."}}, {"@type": "Question", "name": "Should I round up or down on boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Always round up; partial boxes still need to be purchased in full."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/construction/">Construction & Home</a> &rsaquo; Flooring Calculator</div>
+<div class="page-head">
+  <h1>Flooring Calculator</h1>
+  <p class="lede">Calculate how much flooring material and how many boxes you need, including a waste allowance for cuts.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="length">Room length (ft)</label>
+    <input type="number" id="length" step="any" value="14" ></div>
+    <div class="field"><label for="width">Room width (ft)</label>
+    <input type="number" id="width" step="any" value="12" ></div>
+    <div class="field"><label for="coverage">Coverage per box (sq ft)</label>
+    <input type="number" id="coverage" step="any" value="20" ></div>
+    <div class="field"><label for="waste">Waste allowance (%)</label>
+    <input type="number" id="waste" step="any" value="10" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Boxes needed</div>
+    <div class="row"><span class="label">Room area</span><span id="res-area"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Total sq ft to buy (with waste)</span><span id="res-areaneeded"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Flooring Calculator works</h2>
+  <p>Room area = length &times; width. We add your waste percentage to that area, then divide by the coverage per box (from the product packaging) and round up, since boxes must be bought whole.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">Why add 10% extra?</div><div class="a">To cover cuts, mistakes, and future repairs made with material from the same batch and dye lot.</div></div><div class="faq-item"><div class="q">Does this work for tile, laminate, and hardwood?</div><div class="a">Yes &amp;mdash; just enter the coverage per box or carton listed on your specific product&#x27;s packaging.</div></div><div class="faq-item"><div class="q">Should I round up or down on boxes?</div><div class="a">Always round up; partial boxes still need to be purchased in full.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/construction/concrete-calculator/">Concrete Calculator</a><a href="/calculators/construction/paint-calculator/">Paint Calculator</a><a href="/calculators/construction/mulch-calculator/">Mulch Calculator</a><a href="/calculators/construction/roofing-calculator/">Roofing Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const l=+document.getElementById('length').value||0;
+    const w=+document.getElementById('width').value||0;
+    const cov=+document.getElementById('coverage').value||1;
+    const waste=+document.getElementById('waste').value||0;
+    const area=l*w;
+    const areaNeeded=area*(1+waste/100);
+    const boxes=Math.ceil(areaNeeded/cov);
+    document.getElementById('res-main').textContent=boxes+' boxes';
+    document.getElementById('res-area').innerHTML='<strong>'+area.toFixed(0)+' sq ft</strong>';
+    document.getElementById('res-areaneeded').innerHTML='<strong>'+areaNeeded.toFixed(0)+' sq ft</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

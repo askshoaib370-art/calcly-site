@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon FBA Fee Calculator - Free Online Business Tool | Calcly</title>
+<meta name="description" content="Estimate Amazon&#x27;s referral and FBA fulfillment fees to find your true profit per unit.">
+<link rel="canonical" href="https://calcly.tools/calculators/business/amazon-fba-fee-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's included in the FBA fulfillment fee?", "acceptedAnswer": {"@type": "Answer", "text": "Picking, packing, shipping, and customer service for that order, based on your product's size and weight tier."}}, {"@type": "Question", "name": "How do I lower my FBA fees?", "acceptedAnswer": {"@type": "Answer", "text": "Optimizing product dimensions and weight to stay within a lower size tier is the most common way to reduce fulfillment costs."}}, {"@type": "Question", "name": "Does this include advertising costs?", "acceptedAnswer": {"@type": "Answer", "text": "No, enter any PPC/advertising spend per unit separately if you want it reflected in your true profit."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/business/">Business</a> &rsaquo; Amazon FBA Fee Calculator</div>
+<div class="page-head">
+  <h1>Amazon FBA Fee Calculator</h1>
+  <p class="lede">Estimate Amazon&#x27;s referral and FBA fulfillment fees to find your true profit per unit.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="price">Sale price ($)</label>
+    <input type="number" id="price" step="any" value="24.99" ></div>
+    <div class="field"><label for="cost">Product cost ($)</label>
+    <input type="number" id="cost" step="any" value="7" ></div>
+    <div class="field"><label for="referral">Referral fee (%)</label>
+    <input type="number" id="referral" step="any" value="15" ></div>
+    <div class="field"><label for="fulfillment">FBA fulfillment fee ($)</label>
+    <input type="number" id="fulfillment" step="any" value="5.5" ></div>
+    <div class="field"><label for="storage">Monthly storage fee, per unit ($)</label>
+    <input type="number" id="storage" step="any" value="0.4" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Net profit per unit</div>
+    <div class="row"><span class="label">Total fees</span><span id="res-fees"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Profit margin</span><span id="res-margin2"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Amazon FBA Fee Calculator works</h2>
+  <p>Net profit = sale price &minus; product cost &minus; referral fee &minus; fulfillment fee &minus; storage fee. The referral fee is a percentage of sale price (varies by category, commonly 8-17%); fulfillment and storage fees come from Amazon's published FBA rate tables based on size and weight tier.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What&#x27;s included in the FBA fulfillment fee?</div><div class="a">Picking, packing, shipping, and customer service for that order, based on your product&#x27;s size and weight tier.</div></div><div class="faq-item"><div class="q">How do I lower my FBA fees?</div><div class="a">Optimizing product dimensions and weight to stay within a lower size tier is the most common way to reduce fulfillment costs.</div></div><div class="faq-item"><div class="q">Does this include advertising costs?</div><div class="a">No, enter any PPC/advertising spend per unit separately if you want it reflected in your true profit.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/business/profit-margin-calculator/">Profit Margin Calculator</a><a href="/calculators/business/break-even-calculator/">Break-Even Point Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const price=+document.getElementById('price').value||0;
+    const cost=+document.getElementById('cost').value||0;
+    const referralPct=+document.getElementById('referral').value||0;
+    const fulfillment=+document.getElementById('fulfillment').value||0;
+    const storage=+document.getElementById('storage').value||0;
+    const referralFee=price*(referralPct/100);
+    const totalFees=referralFee+fulfillment+storage;
+    const profit=price-cost-totalFees;
+    const margin = price!==0 ? (profit/price)*100 : 0;
+    document.getElementById('res-main').textContent='$'+profit.toFixed(2);
+    document.getElementById('res-fees').innerHTML='<strong>$'+totalFees.toFixed(2)+'</strong>';
+    document.getElementById('res-margin2').innerHTML='<strong>'+margin.toFixed(1)+'%</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

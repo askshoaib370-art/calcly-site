@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tip Calculator - Free Online Everyday Math Tool | Calcly</title>
+<meta name="description" content="Calculate the tip amount and total bill, with an option to split the cost between multiple people.">
+<link rel="canonical" href="https://calcly.tools/calculators/everyday-math/tip-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's a standard tip percentage?", "acceptedAnswer": {"@type": "Answer", "text": "15-20% is standard in the US for good service at a sit-down restaurant."}}, {"@type": "Question", "name": "How do I split a bill unevenly?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator splits evenly; for itemized splitting, each person should total their own items plus a proportional share of tax and tip."}}, {"@type": "Question", "name": "Should tip be calculated before or after tax?", "acceptedAnswer": {"@type": "Answer", "text": "Etiquette varies, but many people calculate tip on the pre-tax subtotal."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/everyday-math/">Everyday Math</a> &rsaquo; Tip Calculator</div>
+<div class="page-head">
+  <h1>Tip Calculator</h1>
+  <p class="lede">Calculate the tip amount and total bill, with an option to split the cost between multiple people.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="bill">Bill amount ($)</label>
+    <input type="number" id="bill" step="any" value="68" ></div>
+    <div class="field"><label for="tip">Tip percentage (%)</label>
+    <input type="number" id="tip" step="any" value="18" ></div>
+    <div class="field"><label for="people">Number of people</label>
+    <input type="number" id="people" step="1" value="2" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Tip amount</div>
+    <div class="row"><span class="label">Total bill (with tip)</span><span id="res-total"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Per person (bill + tip)</span><span id="res-perperson"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Tip Calculator works</h2>
+  <p>Tip = bill &times; tip percentage. Total = bill + tip. When splitting, the total is divided evenly by the number of people.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What&#x27;s a standard tip percentage?</div><div class="a">15-20% is standard in the US for good service at a sit-down restaurant.</div></div><div class="faq-item"><div class="q">How do I split a bill unevenly?</div><div class="a">This calculator splits evenly; for itemized splitting, each person should total their own items plus a proportional share of tax and tip.</div></div><div class="faq-item"><div class="q">Should tip be calculated before or after tax?</div><div class="a">Etiquette varies, but many people calculate tip on the pre-tax subtotal.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/everyday-math/percentage-calculator/">Percentage Calculator</a><a href="/calculators/everyday-math/age-calculator/">Age Calculator</a><a href="/calculators/everyday-math/date-difference-calculator/">Date Difference Calculator</a><a href="/calculators/everyday-math/gpa-calculator/">GPA Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const bill=+document.getElementById('bill').value||0;
+    const tipPct=+document.getElementById('tip').value||0;
+    const people=+document.getElementById('people').value||1;
+    const tip=bill*(tipPct/100);
+    const total=bill+tip;
+    document.getElementById('res-main').textContent='$'+tip.toFixed(2);
+    document.getElementById('res-total').innerHTML='<strong>$'+total.toFixed(2)+'</strong>';
+    document.getElementById('res-perperson').innerHTML='<strong>$'+(total/people).toFixed(2)+'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

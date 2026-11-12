@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Calculator - Free Online Construction &amp; Home Tool | Calcly</title>
+<meta name="description" content="Calculate how many cubic yards of concrete you need for a slab, footing, or driveway.">
+<link rel="canonical" href="https://calcly.tools/calculators/construction/concrete-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much extra concrete should I order?", "acceptedAnswer": {"@type": "Answer", "text": "Most contractors add 5-10% to account for spillage and an uneven subgrade."}}, {"@type": "Question", "name": "How thick should a driveway slab be?", "acceptedAnswer": {"@type": "Answer", "text": "Typically 4 inches for passenger cars, 6 inches for driveways that will carry heavier vehicles."}}, {"@type": "Question", "name": "How many 80 lb bags make a cubic yard?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 54 bags of 80 lb bagged concrete mix make one cubic yard."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/construction/">Construction & Home</a> &rsaquo; Concrete Calculator</div>
+<div class="page-head">
+  <h1>Concrete Calculator</h1>
+  <p class="lede">Calculate how many cubic yards of concrete you need for a slab, footing, or driveway.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="length">Length (ft)</label>
+    <input type="number" id="length" step="any" value="20" ></div>
+    <div class="field"><label for="width">Width (ft)</label>
+    <input type="number" id="width" step="any" value="10" ></div>
+    <div class="field"><label for="depth">Depth (inches)</label>
+    <input type="number" id="depth" step="any" value="4" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Cubic yards needed</div>
+    <div class="row"><span class="label">With 10% waste allowance</span><span id="res-withwaste"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Approx. 80 lb bags (if bagged mix)</span><span id="res-bags"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Concrete Calculator works</h2>
+  <p>Cubic yards = (length &times; width &times; depth in feet) &divide; 27. Depth is entered in inches and converted to feet. Example: a 20&times;10 ft slab at 4 inches deep needs about 2.47 cubic yards. Most contractors add 5-10% extra to cover spillage and an uneven subgrade.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">How much extra concrete should I order?</div><div class="a">Most contractors add 5-10% to account for spillage and an uneven subgrade.</div></div><div class="faq-item"><div class="q">How thick should a driveway slab be?</div><div class="a">Typically 4 inches for passenger cars, 6 inches for driveways that will carry heavier vehicles.</div></div><div class="faq-item"><div class="q">How many 80 lb bags make a cubic yard?</div><div class="a">Roughly 54 bags of 80 lb bagged concrete mix make one cubic yard.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/construction/paint-calculator/">Paint Calculator</a><a href="/calculators/construction/flooring-calculator/">Flooring Calculator</a><a href="/calculators/construction/mulch-calculator/">Mulch Calculator</a><a href="/calculators/construction/roofing-calculator/">Roofing Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const l=+document.getElementById('length').value||0;
+    const w=+document.getElementById('width').value||0;
+    const d=+document.getElementById('depth').value||0;
+    const cuft = l*w*(d/12);
+    const cuyd = cuft/27;
+    document.getElementById('res-main').textContent=cuyd.toFixed(2)+' yd³';
+    document.getElementById('res-withwaste').innerHTML='<strong>'+(cuyd*1.1).toFixed(2)+' yd³</strong>';
+    document.getElementById('res-bags').innerHTML='<strong>~'+Math.ceil(cuyd*54)+' bags</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

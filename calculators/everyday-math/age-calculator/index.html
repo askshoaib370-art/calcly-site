@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator - Free Online Everyday Math Tool | Calcly</title>
+<meta name="description" content="Find your exact age in years, months, and days from your birth date.">
+<link rel="canonical" href="https://calcly.tools/calculators/everyday-math/age-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why isn't my age just years divided evenly?", "acceptedAnswer": {"@type": "Answer", "text": "Because months have different lengths and leap years add an extra day every 4 years, so simple division doesn't give an exact age."}}, {"@type": "Question", "name": "Can I calculate age as of a future or past date?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, enter any reference date instead of leaving it on today."}}, {"@type": "Question", "name": "Does this account for leap years?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it uses actual calendar dates, so leap years are handled automatically."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/everyday-math/">Everyday Math</a> &rsaquo; Age Calculator</div>
+<div class="page-head">
+  <h1>Age Calculator</h1>
+  <p class="lede">Find your exact age in years, months, and days from your birth date.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="dob">Date of birth</label>
+    <input type="date" id="dob" step="any" value="" ></div>
+    <div class="field"><label for="asof">As of date</label>
+    <input type="date" id="asof" step="any" value="" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Your age</div>
+    <div class="row"><span class="label">Total days lived</span><span id="res-days"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Age Calculator works</h2>
+  <p>This subtracts your birth date from the reference date (today, by default), carrying over months and days correctly across different month lengths and leap years.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">Why isn&#x27;t my age just years divided evenly?</div><div class="a">Because months have different lengths and leap years add an extra day every 4 years, so simple division doesn&#x27;t give an exact age.</div></div><div class="faq-item"><div class="q">Can I calculate age as of a future or past date?</div><div class="a">Yes, enter any reference date instead of leaving it on today.</div></div><div class="faq-item"><div class="q">Does this account for leap years?</div><div class="a">Yes, it uses actual calendar dates, so leap years are handled automatically.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/everyday-math/percentage-calculator/">Percentage Calculator</a><a href="/calculators/everyday-math/date-difference-calculator/">Date Difference Calculator</a><a href="/calculators/everyday-math/gpa-calculator/">GPA Calculator</a><a href="/calculators/everyday-math/tip-calculator/">Tip Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const dob=document.getElementById('dob').value;
+    let asof=document.getElementById('asof').value;
+    if(!dob) return;
+    const start=new Date(dob+'T00:00:00');
+    const end=asof? new Date(asof+'T00:00:00') : new Date();
+    let years=end.getFullYear()-start.getFullYear();
+    let months=end.getMonth()-start.getMonth();
+    let days=end.getDate()-start.getDate();
+    if(days<0){ months--; const prevMonth=new Date(end.getFullYear(),end.getMonth(),0); days+=prevMonth.getDate(); }
+    if(months<0){ years--; months+=12; }
+    const totalDays=Math.floor((end-start)/(24*60*60*1000));
+    document.getElementById('res-main').textContent=years+'y '+months+'m '+days+'d';
+    document.getElementById('res-days').innerHTML='<strong>'+totalDays.toLocaleString()+' days</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

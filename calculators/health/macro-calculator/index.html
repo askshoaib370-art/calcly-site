@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro Calculator - Free Online Health &amp; Fitness Tool | Calcly</title>
+<meta name="description" content="Get personalized protein, carbohydrate, and fat targets in grams based on your calorie needs and fitness goal.">
+<link rel="canonical" href="https://calcly.tools/calculators/health/macro-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What macro split is best for fat loss?", "acceptedAnswer": {"@type": "Answer", "text": "A common starting point is roughly 40% protein / 30% carbs / 30% fat, though any split that fits your calorie target and preferences can work."}}, {"@type": "Question", "name": "Do I need to hit my macros exactly every day?", "acceptedAnswer": {"@type": "Answer", "text": "No &mdash; weekly averages matter far more than hitting an exact number every single day."}}, {"@type": "Question", "name": "How do I find my calorie target?", "acceptedAnswer": {"@type": "Answer", "text": "Use a TDEE/calorie calculator first, then apply a deficit or surplus for your goal before splitting into macros."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/health/">Health & Fitness</a> &rsaquo; Macro Calculator</div>
+<div class="page-head">
+  <h1>Macro Calculator</h1>
+  <p class="lede">Get personalized protein, carbohydrate, and fat targets in grams based on your calorie needs and fitness goal.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="calories">Daily calorie target (kcal)</label>
+    <input type="number" id="calories" step="any" value="2200" ></div>
+    <div class="field"><label for="goal">Goal</label>
+    <select id="goal"><option value="balanced">Balanced (30/40/30)</option><option value="highprotein">High protein (40/30/30)</option><option value="lowcarb">Lower carb (35/25/40)</option></select></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="row"><span class="label">Protein</span><span id="res-protein"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Carbohydrates</span><span id="res-carbs"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Fat</span><span id="res-fat"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Macro Calculator works</h2>
+  <p>Protein and carbs provide about 4 calories per gram, and fat provides about 9 calories per gram. This calculator splits your daily calorie target into grams using the percentage split for your chosen goal. Example: 2,200 kcal on a balanced 30/40/30 split works out to about 165g protein, 220g carbs, and 73g fat.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What macro split is best for fat loss?</div><div class="a">A common starting point is roughly 40% protein / 30% carbs / 30% fat, though any split that fits your calorie target and preferences can work.</div></div><div class="faq-item"><div class="q">Do I need to hit my macros exactly every day?</div><div class="a">No &amp;mdash; weekly averages matter far more than hitting an exact number every single day.</div></div><div class="faq-item"><div class="q">How do I find my calorie target?</div><div class="a">Use a TDEE/calorie calculator first, then apply a deficit or surplus for your goal before splitting into macros.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/health/bmi-calculator/">BMI Calculator</a><a href="/calculators/health/calorie-calculator/">Calorie Calculator (TDEE)</a><a href="/calculators/health/pregnancy-due-date-calculator/">Pregnancy Due Date Calculator</a><a href="/calculators/health/one-rep-max-calculator/">One-Rep Max Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const cals=+document.getElementById('calories').value||0;
+    const goal=document.getElementById('goal').value;
+    let split = goal==='highprotein' ? [0.40,0.30,0.30] : goal==='lowcarb' ? [0.35,0.25,0.40] : [0.30,0.40,0.30];
+    const proteinG=(cals*split[0])/4, carbsG=(cals*split[1])/4, fatG=(cals*split[2])/9;
+    document.getElementById('res-protein').innerHTML='<strong>'+Math.round(proteinG)+' g</strong>';
+    document.getElementById('res-carbs').innerHTML='<strong>'+Math.round(carbsG)+' g</strong>';
+    document.getElementById('res-fat').innerHTML='<strong>'+Math.round(fatG)+' g</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

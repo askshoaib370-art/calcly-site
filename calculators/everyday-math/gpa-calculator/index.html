@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPA Calculator - Free Online Everyday Math Tool | Calcly</title>
+<meta name="description" content="Calculate your semester GPA from your course grades and credit hours.">
+<link rel="canonical" href="https://calcly.tools/calculators/everyday-math/gpa-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between weighted and unweighted GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Weighted GPA gives extra points for AP, IB, or honors courses (sometimes up to 5.0 scale); unweighted treats every course equally on a 4.0 scale."}}, {"@type": "Question", "name": "How do I calculate cumulative GPA across semesters?", "acceptedAnswer": {"@type": "Answer", "text": "Total all grade points earned across every semester, divided by total credit hours attempted across all semesters."}}, {"@type": "Question", "name": "Does a withdrawal (W) affect GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Typically no, a W is excluded from GPA calculations at most schools, though policies vary."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/everyday-math/">Everyday Math</a> &rsaquo; GPA Calculator</div>
+<div class="page-head">
+  <h1>GPA Calculator</h1>
+  <p class="lede">Calculate your semester GPA from your course grades and credit hours.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="g1">Course 1 grade</label>
+    <select id="g1"><option value="4">A</option><option value="3.7">A-</option><option value="3.3">B+</option><option value="3">B</option><option value="2.7">B-</option><option value="2.3">C+</option><option value="2">C</option><option value="1">D</option><option value="0">F</option></select></div>
+    <div class="field"><label for="c1">Course 1 credit hours</label>
+    <input type="number" id="c1" step="0.5" value="3" ></div>
+    <div class="field"><label for="g2">Course 2 grade</label>
+    <select id="g2"><option value="4">A</option><option value="3.7">A-</option><option value="3.3">B+</option><option value="3">B</option><option value="2.7">B-</option><option value="2.3">C+</option><option value="2">C</option><option value="1">D</option><option value="0">F</option></select></div>
+    <div class="field"><label for="c2">Course 2 credit hours</label>
+    <input type="number" id="c2" step="0.5" value="3" ></div>
+    <div class="field"><label for="g3">Course 3 grade</label>
+    <select id="g3"><option value="4">A</option><option value="3.7">A-</option><option value="3.3">B+</option><option value="3">B</option><option value="2.7">B-</option><option value="2.3">C+</option><option value="2">C</option><option value="1">D</option><option value="0">F</option></select></div>
+    <div class="field"><label for="c3">Course 3 credit hours</label>
+    <input type="number" id="c3" step="0.5" value="3" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Your GPA</div>
+    <div class="row"><span class="label">Total credit hours</span><span id="res-hours"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the GPA Calculator works</h2>
+  <p>GPA = &Sigma;(grade points &times; credit hours) &divide; &Sigma;(credit hours). Each letter grade is converted to its standard point value (A=4.0, A-=3.7, etc.), multiplied by that course's credit hours, summed, then divided by total credit hours.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What&#x27;s the difference between weighted and unweighted GPA?</div><div class="a">Weighted GPA gives extra points for AP, IB, or honors courses (sometimes up to 5.0 scale); unweighted treats every course equally on a 4.0 scale.</div></div><div class="faq-item"><div class="q">How do I calculate cumulative GPA across semesters?</div><div class="a">Total all grade points earned across every semester, divided by total credit hours attempted across all semesters.</div></div><div class="faq-item"><div class="q">Does a withdrawal (W) affect GPA?</div><div class="a">Typically no, a W is excluded from GPA calculations at most schools, though policies vary.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/everyday-math/percentage-calculator/">Percentage Calculator</a><a href="/calculators/everyday-math/age-calculator/">Age Calculator</a><a href="/calculators/everyday-math/date-difference-calculator/">Date Difference Calculator</a><a href="/calculators/everyday-math/tip-calculator/">Tip Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const courses=[[1,1],[2,2],[3,3]].map(([g,c])=>[+document.getElementById('g'+g).value, +document.getElementById('c'+c).value||0]);
+    let points=0, hours=0;
+    for(const [grade,credit] of courses){ points+=grade*credit; hours+=credit; }
+    const gpa = hours>0 ? points/hours : 0;
+    document.getElementById('res-main').textContent=gpa.toFixed(2);
+    document.getElementById('res-hours').innerHTML='<strong>'+hours+'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

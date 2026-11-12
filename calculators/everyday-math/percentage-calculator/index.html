@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator - Free Online Everyday Math Tool | Calcly</title>
+<meta name="description" content="Calculate what percent one number is of another, find a percentage of a number, or calculate percentage change.">
+<link rel="canonical" href="https://calcly.tools/calculators/everyday-math/percentage-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate percentage increase?", "acceptedAnswer": {"@type": "Answer", "text": "Use ((new &minus; old) / old) &times; 100 &mdash; a positive result is an increase, negative is a decrease."}}, {"@type": "Question", "name": "How do I find 15% of a number?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the number by 0.15, or enter 15 as X and the number as Y above."}}, {"@type": "Question", "name": "Why is X as a percent of Y different from X% of Y?", "acceptedAnswer": {"@type": "Answer", "text": "They answer different questions: one scales Y by a percentage, the other expresses X relative to Y as a percentage."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/everyday-math/">Everyday Math</a> &rsaquo; Percentage Calculator</div>
+<div class="page-head">
+  <h1>Percentage Calculator</h1>
+  <p class="lede">Calculate what percent one number is of another, find a percentage of a number, or calculate percentage change.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="x">Value X</label>
+    <input type="number" id="x" step="any" value="40" ></div>
+    <div class="field"><label for="y">Value Y</label>
+    <input type="number" id="y" step="any" value="160" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <p class="hint" style="margin-top:10px">Shows: X% of Y, X as a % of Y, and the % change from X to Y.</p>
+  <div id="result" class="result">
+    <div class="row"><span class="label">X% of Y</span><span id="res-xofy"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">X as a percent of Y</span><span id="res-xisy"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Percent change from X to Y</span><span id="res-change"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Percentage Calculator works</h2>
+  <p>Three common percentage calculations: X% of Y = (X/100)&times;Y; X as a percent of Y = (X/Y)&times;100; percent change from X to Y = ((Y&minus;X)/X)&times;100. Example: 40% of 160 is 64, and the change from 40 to 160 is a 300% increase.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">How do I calculate percentage increase?</div><div class="a">Use ((new &amp;minus; old) / old) &amp;times; 100 &amp;mdash; a positive result is an increase, negative is a decrease.</div></div><div class="faq-item"><div class="q">How do I find 15% of a number?</div><div class="a">Multiply the number by 0.15, or enter 15 as X and the number as Y above.</div></div><div class="faq-item"><div class="q">Why is X as a percent of Y different from X% of Y?</div><div class="a">They answer different questions: one scales Y by a percentage, the other expresses X relative to Y as a percentage.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/everyday-math/age-calculator/">Age Calculator</a><a href="/calculators/everyday-math/date-difference-calculator/">Date Difference Calculator</a><a href="/calculators/everyday-math/gpa-calculator/">GPA Calculator</a><a href="/calculators/everyday-math/tip-calculator/">Tip Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const x=+document.getElementById('x').value||0;
+    const y=+document.getElementById('y').value||0;
+    const xofy=(x/100)*y;
+    const xisy = y!==0 ? (x/y)*100 : 0;
+    const change = x!==0 ? ((y-x)/x)*100 : 0;
+    document.getElementById('res-xofy').innerHTML='<strong>'+xofy.toFixed(2)+'</strong>';
+    document.getElementById('res-xisy').innerHTML='<strong>'+xisy.toFixed(2)+'%</strong>';
+    document.getElementById('res-change').innerHTML='<strong>'+change.toFixed(2)+'%</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

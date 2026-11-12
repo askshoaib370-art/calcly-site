@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calcly.tools/sitemap.xml

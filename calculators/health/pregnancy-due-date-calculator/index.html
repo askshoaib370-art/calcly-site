@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Due Date Calculator - Free Online Health &amp; Fitness Tool | Calcly</title>
+<meta name="description" content="Estimate your baby&#x27;s due date based on the first day of your last menstrual period.">
+<link rel="canonical" href="https://calcly.tools/calculators/health/pregnancy-due-date-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is this estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Only about 5% of babies are born exactly on their due date; think of it as the center of a roughly two-week window."}}, {"@type": "Question", "name": "Can I calculate from a conception date instead?", "acceptedAnswer": {"@type": "Answer", "text": "Yes &mdash; add 266 days to the conception date instead of 280 days from the last period."}}, {"@type": "Question", "name": "Does cycle length affect this?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this assumes a standard 28-day cycle; shorter or longer cycles shift the actual due date somewhat."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/health/">Health & Fitness</a> &rsaquo; Pregnancy Due Date Calculator</div>
+<div class="page-head">
+  <h1>Pregnancy Due Date Calculator</h1>
+  <p class="lede">Estimate your baby&#x27;s due date based on the first day of your last menstrual period.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="lmp">First day of last period</label>
+    <input type="date" id="lmp" step="any" value="" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Estimated due date</div>
+    <div class="row"><span class="label">Current estimated week (as of today)</span><span id="res-weeks"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Pregnancy Due Date Calculator works</h2>
+  <p>This adds 280 days (40 weeks) to the first day of your last menstrual period, the standard method used by most due-date estimators and healthcare providers (Naegele's rule).</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">How accurate is this estimate?</div><div class="a">Only about 5% of babies are born exactly on their due date; think of it as the center of a roughly two-week window.</div></div><div class="faq-item"><div class="q">Can I calculate from a conception date instead?</div><div class="a">Yes &amp;mdash; add 266 days to the conception date instead of 280 days from the last period.</div></div><div class="faq-item"><div class="q">Does cycle length affect this?</div><div class="a">Yes, this assumes a standard 28-day cycle; shorter or longer cycles shift the actual due date somewhat.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/health/bmi-calculator/">BMI Calculator</a><a href="/calculators/health/calorie-calculator/">Calorie Calculator (TDEE)</a><a href="/calculators/health/macro-calculator/">Macro Calculator</a><a href="/calculators/health/one-rep-max-calculator/">One-Rep Max Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const lmp=document.getElementById('lmp').value;
+    if(!lmp) return;
+    const start=new Date(lmp+'T00:00:00');
+    const due=new Date(start.getTime()+280*24*60*60*1000);
+    const today=new Date();
+    const daysPregnant=Math.floor((today-start)/(24*60*60*1000));
+    const weeks=Math.floor(daysPregnant/7);
+    document.getElementById('res-main').textContent=due.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('res-weeks').innerHTML='<strong>'+ (weeks>=0 && weeks<45 ? 'Week '+weeks : '—') +'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

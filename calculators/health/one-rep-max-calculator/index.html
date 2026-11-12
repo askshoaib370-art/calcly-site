@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-Rep Max Calculator - Free Online Health &amp; Fitness Tool | Calcly</title>
+<meta name="description" content="Estimate your one-rep max (1RM) for any lift using the weight and reps from a recent set.">
+<link rel="canonical" href="https://calcly.tools/calculators/health/one-rep-max-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this accurate for high rep sets?", "acceptedAnswer": {"@type": "Answer", "text": "Accuracy decreases above about 10 reps; the formula is most reliable for sets of 1-5 reps."}}, {"@type": "Question", "name": "How often should I test my actual 1RM?", "acceptedAnswer": {"@type": "Answer", "text": "Most lifters test every 8-12 weeks to track progress while avoiding the injury risk of frequent true max attempts."}}, {"@type": "Question", "name": "Does this work the same for any exercise?", "acceptedAnswer": {"@type": "Answer", "text": "It works reasonably well for most barbell compound lifts; isolation exercises can behave differently."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/health/">Health & Fitness</a> &rsaquo; One-Rep Max Calculator</div>
+<div class="page-head">
+  <h1>One-Rep Max Calculator</h1>
+  <p class="lede">Estimate your one-rep max (1RM) for any lift using the weight and reps from a recent set.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="weight">Weight lifted (lbs or kg)</label>
+    <input type="number" id="weight" step="any" value="185" ></div>
+    <div class="field"><label for="reps">Reps completed</label>
+    <input type="number" id="reps" step="1" value="5" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Estimated one-rep max</div>
+    <div class="row"><span class="label">90% of 1RM</span><span id="res-90"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">80% of 1RM</span><span id="res-80"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">70% of 1RM</span><span id="res-70"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the One-Rep Max Calculator works</h2>
+  <p>This uses the Epley formula: 1RM = weight &times; (1 + reps/30). Example: lifting 185 for 5 reps estimates a one-rep max of about 216. The percentage breakdowns below are commonly used to plan training weights for strength programs.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">Is this accurate for high rep sets?</div><div class="a">Accuracy decreases above about 10 reps; the formula is most reliable for sets of 1-5 reps.</div></div><div class="faq-item"><div class="q">How often should I test my actual 1RM?</div><div class="a">Most lifters test every 8-12 weeks to track progress while avoiding the injury risk of frequent true max attempts.</div></div><div class="faq-item"><div class="q">Does this work the same for any exercise?</div><div class="a">It works reasonably well for most barbell compound lifts; isolation exercises can behave differently.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/health/bmi-calculator/">BMI Calculator</a><a href="/calculators/health/calorie-calculator/">Calorie Calculator (TDEE)</a><a href="/calculators/health/pregnancy-due-date-calculator/">Pregnancy Due Date Calculator</a><a href="/calculators/health/macro-calculator/">Macro Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const w=+document.getElementById('weight').value||0;
+    const reps=+document.getElementById('reps').value||1;
+    const onerm = reps<=1 ? w : w*(1+reps/30);
+    document.getElementById('res-main').textContent=onerm.toFixed(1);
+    document.getElementById('res-90').innerHTML='<strong>'+(onerm*0.9).toFixed(1)+'</strong>';
+    document.getElementById('res-80').innerHTML='<strong>'+(onerm*0.8).toFixed(1)+'</strong>';
+    document.getElementById('res-70').innerHTML='<strong>'+(onerm*0.7).toFixed(1)+'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

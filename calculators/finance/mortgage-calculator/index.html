@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculator - Free Online Finance Tool | Calcly</title>
+<meta name="description" content="Estimate your monthly mortgage payment, total interest, and total cost based on home price, down payment, interest rate, and loan term.">
+<link rel="canonical" href="https://calcly.tools/calculators/finance/mortgage-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much house can I afford?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is spending no more than 28% of your gross monthly income on housing costs, including principal, interest, taxes, and insurance."}}, {"@type": "Question", "name": "Does this include property taxes and insurance?", "acceptedAnswer": {"@type": "Answer", "text": "No, this calculator shows principal and interest only. Add your local property tax rate and homeowner's insurance estimate for a full monthly PITI payment."}}, {"@type": "Question", "name": "What's a good down payment?", "acceptedAnswer": {"@type": "Answer", "text": "20% avoids private mortgage insurance (PMI) on conventional loans, but many loan programs allow much less."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/finance/">Finance</a> &rsaquo; Mortgage Calculator</div>
+<div class="page-head">
+  <h1>Mortgage Calculator</h1>
+  <p class="lede">Estimate your monthly mortgage payment, total interest, and total cost based on home price, down payment, interest rate, and loan term.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="price">Home price ($)</label>
+    <input type="number" id="price" step="any" value="350000" ></div>
+    <div class="field"><label for="down">Down payment ($)</label>
+    <input type="number" id="down" step="any" value="70000" ></div>
+    <div class="field"><label for="rate">Interest rate (% / year)</label>
+    <input type="number" id="rate" step="any" value="6.5" ></div>
+    <div class="field"><label for="years">Loan term (years)</label>
+    <input type="number" id="years" step="1" value="30" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Estimated monthly payment</div>
+    <div class="row"><span class="label">Total of all payments</span><span id="res-total"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Total interest paid</span><span id="res-interest"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Loan amount (principal)</span><span id="res-principal"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Mortgage Calculator works</h2>
+  <p>This calculator uses the standard amortization formula M&nbsp;=&nbsp;P[r(1+r)<sup>n</sup>]/[(1+r)<sup>n</sup>&minus;1], where P is your loan amount (home price minus down payment), r is your monthly interest rate, and n is the number of monthly payments. Example: a $280,000 loan at 6.5% for 30 years comes to about $1,769/month, with roughly $356,000 paid in interest over the life of the loan.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">How much house can I afford?</div><div class="a">A common guideline is spending no more than 28% of your gross monthly income on housing costs, including principal, interest, taxes, and insurance.</div></div><div class="faq-item"><div class="q">Does this include property taxes and insurance?</div><div class="a">No, this calculator shows principal and interest only. Add your local property tax rate and homeowner&#x27;s insurance estimate for a full monthly PITI payment.</div></div><div class="faq-item"><div class="q">What&#x27;s a good down payment?</div><div class="a">20% avoids private mortgage insurance (PMI) on conventional loans, but many loan programs allow much less.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/finance/compound-interest-calculator/">Compound Interest Calculator</a><a href="/calculators/finance/paycheck-calculator/">Paycheck Calculator</a><a href="/calculators/finance/debt-payoff-calculator/">Debt Payoff Calculator (Snowball Method)</a><a href="/calculators/finance/auto-loan-calculator/">Auto Loan Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const price=+document.getElementById('price').value||0;
+    const down=+document.getElementById('down').value||0;
+    const rate=+document.getElementById('rate').value||0;
+    const years=+document.getElementById('years').value||0;
+    const principal=Math.max(price-down,0);
+    const n=years*12, r=rate/100/12;
+    const m = r===0 ? principal/n : principal*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+    const total = m*n, interest = total-principal;
+    document.getElementById('res-main').textContent = isFinite(m)? '$'+m.toFixed(2)+' / mo' : '—';
+    document.getElementById('res-total').innerHTML = '<strong>$'+total.toFixed(2)+'</strong>';
+    document.getElementById('res-interest').innerHTML = '<strong>$'+interest.toFixed(2)+'</strong>';
+    document.getElementById('res-principal').innerHTML = '<strong>$'+principal.toFixed(2)+'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

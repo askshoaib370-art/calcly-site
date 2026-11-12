@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Grade Calculator - Free Online Education Tool | Calcly</title>
+<meta name="description" content="Find out what score you need on your final exam to get the grade you want in the class.">
+<link rel="canonical" href="https://calcly.tools/calculators/education/final-grade-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What if the required score is over 100%?", "acceptedAnswer": {"@type": "Answer", "text": "It means that grade isn't achievable from the final exam alone &mdash; check for extra credit or a different weighting."}}, {"@type": "Question", "name": "Does this work for any weighting system?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, enter your exam's weight as a percentage of the total final grade."}}, {"@type": "Question", "name": "What if I don't know my current grade exactly?", "acceptedAnswer": {"@type": "Answer", "text": "Use your best estimate from your syllabus's grade breakdown; small errors won't change the needed score dramatically."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/education/">Education</a> &rsaquo; Final Grade Calculator</div>
+<div class="page-head">
+  <h1>Final Grade Calculator</h1>
+  <p class="lede">Find out what score you need on your final exam to get the grade you want in the class.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="current">Current grade (%)</label>
+    <input type="number" id="current" step="any" value="85" ></div>
+    <div class="field"><label for="weight">Final exam weight (%)</label>
+    <input type="number" id="weight" step="any" value="20" ></div>
+    <div class="field"><label for="desired">Desired final grade (%)</label>
+    <input type="number" id="desired" step="any" value="90" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Score needed on final</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Final Grade Calculator works</h2>
+  <p>Desired grade = (current grade &times; (1 &minus; exam weight)) + (final exam score &times; exam weight). Solving for the final exam score gives: needed score = (desired grade &minus; current grade &times; (1 &minus; weight)) / weight.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What if the required score is over 100%?</div><div class="a">It means that grade isn&#x27;t achievable from the final exam alone &amp;mdash; check for extra credit or a different weighting.</div></div><div class="faq-item"><div class="q">Does this work for any weighting system?</div><div class="a">Yes, enter your exam&#x27;s weight as a percentage of the total final grade.</div></div><div class="faq-item"><div class="q">What if I don&#x27;t know my current grade exactly?</div><div class="a">Use your best estimate from your syllabus&#x27;s grade breakdown; small errors won&#x27;t change the needed score dramatically.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/finance/mortgage-calculator/">Mortgage Calculator</a><a href="/calculators/finance/compound-interest-calculator/">Compound Interest Calculator</a><a href="/calculators/finance/paycheck-calculator/">Paycheck Calculator</a><a href="/calculators/finance/debt-payoff-calculator/">Debt Payoff Calculator (Snowball Method)</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const current=+document.getElementById('current').value||0;
+    const weight=(+document.getElementById('weight').value||0)/100;
+    const desired=+document.getElementById('desired').value||0;
+    const needed = weight>0 ? (desired-(current*(1-weight)))/weight : 0;
+    document.getElementById('res-main').textContent = needed>100 ? needed.toFixed(1)+'% (not achievable)' : needed<0 ? '0% (already secured)' : needed.toFixed(1)+'%';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

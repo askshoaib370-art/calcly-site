@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gas Cost Calculator - Free Online Automotive Tool | Calcly</title>
+<meta name="description" content="Calculate how much a road trip or daily commute will cost in gas based on distance, fuel efficiency, and gas price.">
+<link rel="canonical" href="https://calcly.tools/calculators/automotive/gas-cost-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I find my car's actual MPG?", "acceptedAnswer": {"@type": "Answer", "text": "Divide miles driven by gallons used at your last fill-up, or check your owner's manual for the EPA-rated combined MPG."}}, {"@type": "Question", "name": "Does this account for highway vs. city driving?", "acceptedAnswer": {"@type": "Answer", "text": "Enter your combined MPG for the most realistic estimate, or use your highway MPG for a long road trip."}}, {"@type": "Question", "name": "Does this include tolls or other trip costs?", "acceptedAnswer": {"@type": "Answer", "text": "No, this covers fuel cost only."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/automotive/">Automotive</a> &rsaquo; Gas Cost Calculator</div>
+<div class="page-head">
+  <h1>Gas Cost Calculator</h1>
+  <p class="lede">Calculate how much a road trip or daily commute will cost in gas based on distance, fuel efficiency, and gas price.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="distance">Distance (miles)</label>
+    <input type="number" id="distance" step="any" value="300" ></div>
+    <div class="field"><label for="mpg">Fuel efficiency (MPG)</label>
+    <input type="number" id="mpg" step="any" value="28" ></div>
+    <div class="field"><label for="gasprice">Price per gallon ($)</label>
+    <input type="number" id="gasprice" step="any" value="3.45" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Total gas cost</div>
+    <div class="row"><span class="label">Gallons needed</span><span id="res-gallons"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Gas Cost Calculator works</h2>
+  <p>Gallons needed = distance &divide; MPG. Total cost = gallons &times; price per gallon. Example: a 300-mile trip at 28 MPG with gas at $3.45/gal costs about $36.96.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">How do I find my car&#x27;s actual MPG?</div><div class="a">Divide miles driven by gallons used at your last fill-up, or check your owner&#x27;s manual for the EPA-rated combined MPG.</div></div><div class="faq-item"><div class="q">Does this account for highway vs. city driving?</div><div class="a">Enter your combined MPG for the most realistic estimate, or use your highway MPG for a long road trip.</div></div><div class="faq-item"><div class="q">Does this include tolls or other trip costs?</div><div class="a">No, this covers fuel cost only.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/finance/mortgage-calculator/">Mortgage Calculator</a><a href="/calculators/finance/compound-interest-calculator/">Compound Interest Calculator</a><a href="/calculators/finance/paycheck-calculator/">Paycheck Calculator</a><a href="/calculators/finance/debt-payoff-calculator/">Debt Payoff Calculator (Snowball Method)</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const dist=+document.getElementById('distance').value||0;
+    const mpg=+document.getElementById('mpg').value||1;
+    const price=+document.getElementById('gasprice').value||0;
+    const gallons=dist/mpg;
+    const cost=gallons*price;
+    document.getElementById('res-main').textContent='$'+cost.toFixed(2);
+    document.getElementById('res-gallons').innerHTML='<strong>'+gallons.toFixed(2)+' gal</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator - Free Online Finance Tool | Calcly</title>
+<meta name="description" content="See how your savings or investment grows over time with compound interest, and how much of the final balance is interest you earned.">
+<link rel="canonical" href="https://calcly.tools/calculators/finance/compound-interest-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between simple and compound interest?", "acceptedAnswer": {"@type": "Answer", "text": "Compound interest earns interest on previously earned interest, so growth accelerates over time; simple interest only applies to the original principal."}}, {"@type": "Question", "name": "How often should interest compound for the best growth?", "acceptedAnswer": {"@type": "Answer", "text": "Daily or monthly compounding grows slightly faster than annual compounding, though the real-world difference is small at typical rates."}}, {"@type": "Question", "name": "Does this account for additional contributions?", "acceptedAnswer": {"@type": "Answer", "text": "No, this version assumes a single lump sum with no further deposits."}}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/"><span>Calcly</span></a>
+    <nav class="main"><a href="/calculators/finance/">Finance</a><a href="/calculators/health/">Health & Fitness</a><a href="/calculators/construction/">Construction & Home</a><a href="/calculators/everyday-math/">Everyday Math</a><a href="/calculators/business/">Business</a><a href="/calculators/automotive/">Automotive</a><a href="/calculators/education/">Education</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/finance/">Finance</a> &rsaquo; Compound Interest Calculator</div>
+<div class="page-head">
+  <h1>Compound Interest Calculator</h1>
+  <p class="lede">See how your savings or investment grows over time with compound interest, and how much of the final balance is interest you earned.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; above the fold</div>
+
+<div class="card">
+  <div class="calc-grid">
+    <div class="field"><label for="principal">Initial amount ($)</label>
+    <input type="number" id="principal" step="any" value="5000" ></div>
+    <div class="field"><label for="rate">Annual interest rate (%)</label>
+    <input type="number" id="rate" step="any" value="7" ></div>
+    <div class="field"><label for="n">Compounding frequency</label>
+    <select id="n"><option value="1">Annually</option><option value="4">Quarterly</option><option value="12">Monthly</option><option value="365">Daily</option></select></div>
+    <div class="field"><label for="years">Years</label>
+    <input type="number" id="years" step="1" value="10" ></div>
+  </div><button class="btn" onclick="calc()">Calculate</button>
+  <div id="result" class="result">
+    <div class="big"><span id="res-main">&mdash;</span></div><div class="hint" style="margin-top:4px">Future value</div>
+    <div class="row"><span class="label">Total interest earned</span><span id="res-interest"><strong>&mdash;</strong></span></div>
+    <div class="row"><span class="label">Starting amount</span><span id="res-principal"><strong>&mdash;</strong></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">How the Compound Interest Calculator works</h2>
+  <p>This uses A = P(1 + r/n)<sup>nt</sup>, where P is your starting amount, r is the annual rate, n is how many times per year interest compounds, and t is the number of years. Example: $5,000 at 7% compounded monthly for 10 years grows to about $10,048, meaning roughly $5,048 was earned purely from interest.</p>
+</div>
+
+<div class="ad-slot">Ad placeholder &mdash; below the fold</div>
+
+<div class="card">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq-item"><div class="q">What&#x27;s the difference between simple and compound interest?</div><div class="a">Compound interest earns interest on previously earned interest, so growth accelerates over time; simple interest only applies to the original principal.</div></div><div class="faq-item"><div class="q">How often should interest compound for the best growth?</div><div class="a">Daily or monthly compounding grows slightly faster than annual compounding, though the real-world difference is small at typical rates.</div></div><div class="faq-item"><div class="q">Does this account for additional contributions?</div><div class="a">No, this version assumes a single lump sum with no further deposits.</div></div>
+</div>
+
+<div class="card">
+  <h2 class="section-title">Related calculators</h2>
+  <div class="related-links"><a href="/calculators/finance/mortgage-calculator/">Mortgage Calculator</a><a href="/calculators/finance/paycheck-calculator/">Paycheck Calculator</a><a href="/calculators/finance/debt-payoff-calculator/">Debt Payoff Calculator (Snowball Method)</a><a href="/calculators/finance/auto-loan-calculator/">Auto Loan Calculator</a></div>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span>Calcly</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:320px">Free calculators for everyday life, finance, health, and home projects.</p>
+    </div>
+    <div><h4>Categories</h4><ul><li><a href="/calculators/finance/">Finance</a></li><li><a href="/calculators/health/">Health & Fitness</a></li><li><a href="/calculators/construction/">Construction & Home</a></li><li><a href="/calculators/everyday-math/">Everyday Math</a></li><li><a href="/calculators/business/">Business</a></li><li><a href="/calculators/automotive/">Automotive</a></li><li><a href="/calculators/education/">Education</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Calcly. All calculators are provided for informational purposes only.</div>
+</footer>
+<script>
+function calc(){
+    const p=+document.getElementById('principal').value||0;
+    const rate=+document.getElementById('rate').value||0;
+    const n=+document.getElementById('n').value||1;
+    const t=+document.getElementById('years').value||0;
+    const a = p*Math.pow(1+(rate/100)/n, n*t);
+    const interest = a-p;
+    document.getElementById('res-main').textContent='$'+a.toFixed(2);
+    document.getElementById('res-interest').innerHTML='<strong>$'+interest.toFixed(2)+'</strong>';
+    document.getElementById('res-principal').innerHTML='<strong>$'+p.toFixed(2)+'</strong>';
+    document.getElementById('result').classList.add('show');
+  }
+</script>
+</body>
+</html>
